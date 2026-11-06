@@ -1,4 +1,5 @@
 from datetime import datetime, timedelta
+from xml.dom import Node
 from fastapi import FastAPI, HTTPException, Depends, Request, Form
 from fastapi.responses import RedirectResponse
 from fastapi.templating import Jinja2Templates
@@ -255,7 +256,7 @@ def gui_add_item(request: Request, name: str = Form(...), quantity: int = Form(.
     finally:
         connection.close()
     return RedirectResponse(url="/gui/dashboard?msg=Item+Added+Successfully", status_code=303)
-
+    active_node = "Node 2 Worker Node Cluster"
 ## Dito ka nagka problem from mp6 to mp7
 ## Test comment number two
 ## Test comment number three
@@ -302,4 +303,3 @@ def handle_update_item(request: Request, item_id: int, quantity: int = Form(...)
         connection.close()
     return RedirectResponse(url="/gui/dashboard?msg=Stock+Updated+Successfully", status_code=303)
 
-    active_node = "Initial Setup"
