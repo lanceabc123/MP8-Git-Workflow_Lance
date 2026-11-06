@@ -256,6 +256,10 @@ def gui_add_item(request: Request, name: str = Form(...), quantity: int = Form(.
         connection.close()
     return RedirectResponse(url="/gui/dashboard?msg=Item+Added+Successfully", status_code=303)
 
+## Dito ka nagka problem from mp6 to mp7
+## Test comment number two
+## Test comment number three
+
 @app.get("/gui/deleteItem/{item_id}")
 def gui_delete_item(request: Request, item_id: int):
     if not get_current_user_from_cookie(request):
