@@ -303,4 +303,4 @@ def handle_update_item(request: Request, item_id: int, quantity: int = Form(...)
         connection.close()
     return RedirectResponse(url="/gui/dashboard?msg=Stock+Updated+Successfully", status_code=303)
 
-active_node = "Hybrid Cluster: Node 1 (Primary) & Node 2 (Worker)"
+active_node = "Node 2 Worker Node Cluster"
