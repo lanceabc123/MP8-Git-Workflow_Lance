@@ -287,7 +287,7 @@ def render_update_item(request: Request, item_id: int):
             return templates.TemplateResponse("update.html", {"request": request, "item": item})
     finally:
         connection.close()
-
+        active_node = "Initial Setup"
 @app.post("/gui/updateItem/{item_id}")
 def handle_update_item(request: Request, item_id: int, quantity: int = Form(...), price: float = Form(...)):
     if not get_current_user_from_cookie(request):
@@ -302,4 +302,4 @@ def handle_update_item(request: Request, item_id: int, quantity: int = Form(...)
         connection.close()
     return RedirectResponse(url="/gui/dashboard?msg=Stock+Updated+Successfully", status_code=303)
 
-    active_node = "Initial Setup"
+  
